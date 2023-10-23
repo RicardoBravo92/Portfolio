@@ -24,6 +24,7 @@ import threejs from './tech/threejs.svg';
 import atel from './company/atel.png';
 import miamid from './company/miamid.png';
 import akui from './company/akui.png';
+import yabok from './company/yabok.png';
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
@@ -54,5 +55,6 @@ export {
   miamid,
   akui,
   yateveo,
+  yabok,
   pet,
 };

@@ -17,6 +17,7 @@ import {
   miamid,
   akui,
   yateveo,
+  yabok,
   pet,
 } from '../assets';
 
@@ -129,8 +130,16 @@ const experiences = [
     company_name: 'Miami Signature Designs',
     icon: miamid,
     iconBg: '#383E56',
-    date: 'Feb 2023 - Present',
+    date: 'Feb 2023 - Aug 2023',
     points: ['Developing a backend in nodejs for a E-commerse movile app.'],
+  },
+  {
+    title: 'Fullstack Developer',
+    company_name: 'Yabok Technology Inc',
+    icon: yabok,
+    iconBg: '#383E56',
+    date: 'Sep 2023 - Present',
+    points: ['Full stack applications in nodejs and react js.'],
   },
 ];
 
