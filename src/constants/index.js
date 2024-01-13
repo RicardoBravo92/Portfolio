@@ -18,6 +18,7 @@ import {
   akui,
   yateveo,
   yabok,
+  eiche,
   pet,
 } from '../assets';
 
@@ -138,8 +139,16 @@ const experiences = [
     company_name: 'Yabok Technology Inc',
     icon: yabok,
     iconBg: '#383E56',
-    date: 'Sep 2023 - Present',
+    date: 'Sep 2023 - Oct 2023',
     points: ['Full stack applications in nodejs and react js.'],
+  },
+  {
+    title: 'Web Developer',
+    company_name: 'EICHE',
+    icon: eiche,
+    iconBg: '#383E56',
+    date: 'Dec 2023 - Present',
+    points: [' Creation and fix apps in nodejs and react js.'],
   },
 ];
 
