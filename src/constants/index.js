@@ -19,6 +19,7 @@ import {
   yateveo,
   yabok,
   eiche,
+  guruxy,
   pet,
 } from '../assets';
 
@@ -147,8 +148,16 @@ const experiences = [
     company_name: 'EICHE',
     icon: eiche,
     iconBg: '#383E56',
-    date: 'Dec 2023 - Present',
+    date: 'Dec 2023 -  March 2024',
     points: [' Creation and fix apps in nodejs and react js.'],
+  },
+  {
+    title: 'Full Stack Engineer',
+    company_name: 'Guruxy',
+    icon: guruxy,
+    iconBg: '#383E56',
+    date: ' March 2024 2023 - Present',
+    points: [' Work in next.js components and pages'],
   },
 ];
 

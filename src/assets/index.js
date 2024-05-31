@@ -26,6 +26,7 @@ import miamid from './company/miamid.png';
 import akui from './company/akui.png';
 import yabok from './company/yabok.png';
 import eiche from './company/eichelogo.png';
+import guruxy from './company/guruxy.png';
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
@@ -58,5 +59,6 @@ export {
   yateveo,
   yabok,
   eiche,
+  guruxy,
   pet,
 };
