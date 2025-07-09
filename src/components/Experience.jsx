@@ -1,55 +1,54 @@
-import React from "react";
+import React from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-
-import "react-vertical-timeline-component/style.min.css";
-
-import { styles } from "../styles";
-import { experiences } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { experiences } from '../constants';
+import { SectionWrapper } from '../hoc';
+import { useTranslation } from 'react-i18next';
 
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: '#fff',
+        color: '#18181b',
+        border: '1px solid #e5e7eb',
+        borderRadius: '1rem',
+        boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)',
+        padding: '2rem 1.5rem',
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: '7px solid #e5e7eb' }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      dateClassName="text-muted"
+      iconStyle={{
+        background: '#fff',
+        border: '2px solid #e5e7eb',
+        boxShadow: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
       icon={
-        <div className='flex justify-center items-center w-full h-full'>
+        <div className="flex justify-center items-center w-full h-full">
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className="w-10 h-10 object-contain rounded-full"
           />
         </div>
       }
     >
       <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
+        <h3 className="text-xl font-bold text-text mb-1">{experience.title}</h3>
+        <p className="text-accent text-base font-semibold mb-2">
           {experience.company_name}
         </p>
       </div>
-
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
+      <ul className="mt-3 list-disc ml-5 space-y-2 text-muted text-sm text-left">
         {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
+          <li key={`experience-point-${index}`}>{point}</li>
         ))}
       </ul>
     </VerticalTimelineElement>
@@ -57,19 +56,19 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { t } = useTranslation();
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
+    <section className="py-12 px-4 max-w-5xl mx-auto" id="work">
+      <div className="mb-8 text-center">
+        <p className="text-accent uppercase tracking-widest text-sm mb-2">
+          {t('experience.title')}
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
+          {t('experience.subtitle')}
         </h2>
-      </motion.div>
-
-      <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
+      </div>
+      <div className="mt-8 flex flex-col">
+        <VerticalTimeline layout="1-column" lineColor="#e5e7eb">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
@@ -78,8 +77,8 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </section>
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, 'work');

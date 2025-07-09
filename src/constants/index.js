@@ -20,7 +20,8 @@ import {
   yabok,
   eiche,
   guruxy,
-  pet,
+  oklusion,
+  pet
 } from '../assets';
 
 export const navLinks = [
@@ -156,8 +157,16 @@ const experiences = [
     company_name: 'Guruxy',
     icon: guruxy,
     iconBg: '#383E56',
-    date: ' March 2024 2023 - Present',
+    date: ' March 2024 - October-2024',
     points: [' Work in next.js components and pages'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company_name: 'Oklusion',
+    icon: oklusion,
+    iconBg: '#383E56',
+    date: ' October-2024 - Present',
+    points: [' Work with reactjs and nodejs on two pages'],
   },
 ];
 

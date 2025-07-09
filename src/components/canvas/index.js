@@ -1,6 +1,1 @@
-import EarthCanvas from "./Earth";
-import BallCanvas from "./Ball";
-import ComputersCanvas from "./Computers";
-import StarsCanvas from "./Stars";
-
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas };
+// Este archivo queda vacío tras eliminar los canvas relacionados con three.js.

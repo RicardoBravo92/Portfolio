@@ -19,7 +19,6 @@ import reactjs from './tech/reactjs.png';
 import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
 import typescript from './tech/typescript.png';
-import threejs from './tech/threejs.svg';
 
 import atel from './company/atel.png';
 import miamid from './company/miamid.png';
@@ -27,6 +26,7 @@ import akui from './company/akui.png';
 import yabok from './company/yabok.png';
 import eiche from './company/eichelogo.png';
 import guruxy from './company/guruxy.png';
+import oklusion from './company/oklusion.jpg'
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
@@ -52,7 +52,6 @@ export {
   redux,
   tailwind,
   typescript,
-  threejs,
   atel,
   miamid,
   akui,
@@ -60,5 +59,6 @@ export {
   yabok,
   eiche,
   guruxy,
+  oklusion,
   pet,
 };
