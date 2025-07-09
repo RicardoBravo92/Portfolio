@@ -39,8 +39,21 @@ const Navbar = () => {
             <a href="https://github.com/RicardoBravo92" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-muted hover:text-accent transition-colors">{t('navbar.github')}</a>
           </li>
           <li>
-            <button onClick={() => changeLanguage('es')} className="mx-1 px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20">ES</button>
-            <button onClick={() => changeLanguage('en')} className="mx-1 px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20">EN</button>
+            <a href="http://linkedin.com/in/ricardo-bravo-neri" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-muted hover:text-accent transition-colors">LinkedIn</a>
+          </li>
+          <li>
+            <button
+              onClick={() => changeLanguage('es')}
+              className={`mx-1 px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20 ${i18n.language === 'es' ? 'bg-accent text-white' : ''}`}
+            >
+              ES
+            </button>
+            <button
+              onClick={() => changeLanguage('en')}
+              className={`mx-1 px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20 ${i18n.language === 'en' ? 'bg-accent text-white' : ''}`}
+            >
+              EN
+            </button>
           </li>
         </ul>
         {/* Menú móvil */}
@@ -80,9 +93,20 @@ const Navbar = () => {
               </a>
             ))}
             <a href="https://github.com/RicardoBravo92" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-muted hover:text-accent transition-colors">{t('navbar.github')}</a>
+            <a href="http://linkedin.com/in/ricardo-bravo-neri" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-muted hover:text-accent transition-colors">LinkedIn</a>
             <div className="flex gap-2 mt-2">
-              <button onClick={() => changeLanguage('es')} className="px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20">ES</button>
-              <button onClick={() => changeLanguage('en')} className="px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20">EN</button>
+              <button
+                onClick={() => changeLanguage('es')}
+                className={`px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20 ${i18n.language === 'es' ? 'bg-accent text-white' : ''}`}
+              >
+                ES
+              </button>
+              <button
+                onClick={() => changeLanguage('en')}
+                className={`px-2 py-1 rounded text-sm border border-secondary/40 hover:bg-secondary/20 ${i18n.language === 'en' ? 'bg-accent text-white' : ''}`}
+              >
+                EN
+              </button>
             </div>
           </div>
         )}

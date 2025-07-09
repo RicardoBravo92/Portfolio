@@ -5,6 +5,7 @@ import {
   web,
   javascript,
   typescript,
+  nexjt,
   html,
   css,
   reactjs,
@@ -21,7 +22,14 @@ import {
   eiche,
   guruxy,
   oklusion,
-  pet
+  pet,
+  postgresql,
+  nest,
+  python,
+  docker,
+  expo,
+  hearingdate,
+  wequo
 } from '../assets';
 
 export const navLinks = [
@@ -80,9 +88,13 @@ const technologies = [
     icon: reactjs,
   },
   {
+    name: 'Next.js',
+    icon: nexjt, 
+   },
+/*   {
     name: 'Redux Toolkit',
     icon: redux,
-  },
+  }, */
   {
     name: 'Tailwind CSS',
     icon: tailwind,
@@ -92,14 +104,34 @@ const technologies = [
     icon: nodejs,
   },
   {
+    name:  'Nest.js',
+    icon : nest
+   },
+  {
     name: 'MongoDB',
     icon: mongodb,
-  },
-
-  {
+  },  
+   {
+    name:'PostgreSQL',
+    icon :postgresql
+   },
+   {
     name: 'git',
     icon: git,
   },
+ 
+   {
+    name: 'Python',
+    icon: python   
+   },
+   {
+    name :'Docker',
+    icon:docker
+   },
+   {
+    name:'Expo',
+    icon:expo
+   }
 ];
 
 const experiences = [
@@ -157,7 +189,7 @@ const experiences = [
     company_name: 'Guruxy',
     icon: guruxy,
     iconBg: '#383E56',
-    date: ' March 2024 - October-2024',
+    date: ' March 2024 - Oct 2024',
     points: [' Work in next.js components and pages'],
   },
   {
@@ -165,7 +197,7 @@ const experiences = [
     company_name: 'Oklusion',
     icon: oklusion,
     iconBg: '#383E56',
-    date: ' October-2024 - Present',
+    date: ' Oct 2024 - June 2025',
     points: [' Work with reactjs and nodejs on two pages'],
   },
 ];
@@ -217,6 +249,7 @@ const projects = [
     ],
     image: pet,
     source_code_link: 'https://github.com/RicardoBravo92/PF-04-Ecommerce',
+    badge: 'mine',
   },
   {
     name: 'Ya te veo',
@@ -232,7 +265,48 @@ const projects = [
       },
     ],
     image: yateveo,
+    badge: 'contributed',
   },
+  {
+    name: 'Hearingdate',
+    description: 'A web app to schedule appointments with attorneys',
+    tags: [
+      {
+        name: 'react.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'mongodb',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'nodejs',
+        color: 'yellow-text-gradient',
+      },
+    ],
+    image: hearingdate,
+    weblink: 'https://hearingdate.app',
+    badge: 'contributed',
+  },
+  {
+   //wequo
+   name: 'Wequo',
+   description: 'A web app to generate travel quotes.',
+    tags: [
+      {
+        name: 'next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'postgreSQL',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: wequo,
+    weblink: 'https://wequo.com/',
+    badge: 'contributed',
+
+  }
 ];
 
 export { services, technologies, experiences, testimonials, projects };
