@@ -301,6 +301,10 @@ const projects = [
         name: 'postgreSQL',
         color: 'green-text-gradient',
       },
+      {
+        name: 'docker',
+        color: 'yellow-text-gradient',
+      },
     ],
     image: wequo,
     weblink: 'https://wequo.com/',
