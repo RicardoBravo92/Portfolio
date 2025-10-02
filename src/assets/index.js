@@ -20,10 +20,10 @@ import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
 import typescript from './tech/typescript.png';
 import nexjt from './tech/next-js.svg';
-import nest from './tech/nestjs.svg'
-import postgresql from './tech/postgresql.svg'
-import python from './tech/python.svg'
-import expo from './tech/expo.svg'
+import nest from './tech/nestjs.svg';
+import postgresql from './tech/postgresql.svg';
+import python from './tech/python.svg';
+import expo from './tech/expo.svg';
 
 import atel from './company/atel.png';
 import miamid from './company/miamid.png';
@@ -31,12 +31,14 @@ import akui from './company/akui.png';
 import yabok from './company/yabok.png';
 import eiche from './company/eichelogo.png';
 import guruxy from './company/guruxy.png';
-import oklusion from './company/oklusion.jpg'
+import oklusion from './company/oklusion.jpg';
+import iproperty from './company/iproperty.png';
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
-import hearingdate from './hearingdate.png'
-import wequo from './Wequo.png'
+import hearingdate from './hearingdate.png';
+import wequo from './Wequo.png';
+import ipropertyProy from './ipropertyProy.png';
 
 export {
   logo,
@@ -67,6 +69,7 @@ export {
   eiche,
   guruxy,
   oklusion,
+  iproperty,
   pet,
   nexjt,
   postgresql,
@@ -74,5 +77,6 @@ export {
   python,
   expo,
   hearingdate,
-  wequo
+  wequo,
+  ipropertyProy,
 };

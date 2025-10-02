@@ -22,6 +22,7 @@ import {
   eiche,
   guruxy,
   oklusion,
+  iproperty,
   pet,
   postgresql,
   nest,
@@ -29,7 +30,8 @@ import {
   docker,
   expo,
   hearingdate,
-  wequo
+  wequo,
+  ipropertyProy,
 } from '../assets';
 
 export const navLinks = [
@@ -89,9 +91,9 @@ const technologies = [
   },
   {
     name: 'Next.js',
-    icon: nexjt, 
-   },
-/*   {
+    icon: nexjt,
+  },
+  /*   {
     name: 'Redux Toolkit',
     icon: redux,
   }, */
@@ -104,34 +106,34 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name:  'Nest.js',
-    icon : nest
-   },
+    name: 'Nest.js',
+    icon: nest,
+  },
   {
     name: 'MongoDB',
     icon: mongodb,
-  },  
-   {
-    name:'PostgreSQL',
-    icon :postgresql
-   },
-   {
+  },
+  {
+    name: 'PostgreSQL',
+    icon: postgresql,
+  },
+  {
     name: 'git',
     icon: git,
   },
- 
-   {
+
+  {
     name: 'Python',
-    icon: python   
-   },
-   {
-    name :'Docker',
-    icon:docker
-   },
-   {
-    name:'Expo',
-    icon:expo
-   }
+    icon: python,
+  },
+  {
+    name: 'Docker',
+    icon: docker,
+  },
+  {
+    name: 'Expo',
+    icon: expo,
+  },
 ];
 
 const experiences = [
@@ -199,6 +201,16 @@ const experiences = [
     iconBg: '#383E56',
     date: ' Oct 2024 - June 2025',
     points: [' Work with reactjs and nodejs on two pages'],
+  },
+  {
+    title: 'Web developer',
+    company_name: 'Iproperty',
+    icon: iproperty,
+    iconBg: '#383E56',
+    date: ' June 2025 - present',
+    points: [
+      'Maintenance and creation of functionalities in nextjs and nestjs.',
+    ],
   },
 ];
 
@@ -289,9 +301,8 @@ const projects = [
     badge: 'contributed',
   },
   {
-   //wequo
-   name: 'Wequo',
-   description: 'A web app to generate travel quotes.',
+    name: 'Wequo',
+    description: 'A web app to generate travel quotes.',
     tags: [
       {
         name: 'next.js',
@@ -309,8 +320,32 @@ const projects = [
     image: wequo,
     weblink: 'https://wequo.com/',
     badge: 'contributed',
-
-  }
+  },
+  {
+    name: 'Iproperty',
+    description: 'A web app to manage real estate listings.',
+    tags: [
+      {
+        name: 'next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'postgreSQL',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'docker',
+        color: 'yellow-text-gradient',
+      },
+      {
+        name: 'nest.js',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: ipropertyProy,
+    weblink: 'https://www.iproperty.es/',
+    badge: 'contributed',
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };
