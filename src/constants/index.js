@@ -32,6 +32,7 @@ import {
   hearingdate,
   wequo,
   ipropertyProy,
+  aythen,
 } from '../assets';
 
 export const navLinks = [
@@ -195,7 +196,7 @@ const experiences = [
     points: [' Work in next.js components and pages'],
   },
   {
-    title: 'Full-stack Developer',
+    title: 'Full Stack Developer',
     company_name: 'Oklusion',
     icon: oklusion,
     iconBg: '#383E56',
@@ -203,13 +204,23 @@ const experiences = [
     points: [' Work with reactjs and nodejs on two pages'],
   },
   {
-    title: 'Web developer',
+    title: 'Web Developer',
     company_name: 'Iproperty',
     icon: iproperty,
     iconBg: '#383E56',
-    date: ' June 2025 - present',
+    date: ' June 2025 - oct 2025',
     points: [
       'Maintenance and creation of functionalities in nextjs and nestjs.',
+    ],
+  },
+  {
+    title: 'Full Stack Developer',
+    company_name: 'Aythen',
+    icon: aythen,
+    iconBg: '#383E56',
+    date: ' Nov 2025 - present',
+    points: [
+      'Create features using React.js and Node.js for web applications.',
     ],
   },
 ];
@@ -309,6 +320,10 @@ const projects = [
         color: 'blue-text-gradient',
       },
       {
+        name: 'supabase',
+        color: 'green-text-500',
+      },
+      {
         name: 'postgreSQL',
         color: 'green-text-gradient',
       },
@@ -328,6 +343,10 @@ const projects = [
       {
         name: 'next.js',
         color: 'blue-text-gradient',
+      },
+      {
+        name: 'supabase',
+        color: 'green-text-500',
       },
       {
         name: 'postgreSQL',

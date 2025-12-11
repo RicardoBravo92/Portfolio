@@ -58,7 +58,7 @@ const ProjectCard = ({
       </div>
       <h3 className='text-lg font-bold text-text mb-1 '>{name}</h3>
       <p className='text-muted text-sm mb-3'>{description}</p>
-      <div className='flex flex-wrap gap-2 mt-auto'>
+      <div className='grid grid-cols-3 mt-auto max-w-[250px] gap-2'>
         {tags.map((tag) => (
           <span key={tag.name} className={`text-xs ${tag.color}`}>
             #{tag.name}

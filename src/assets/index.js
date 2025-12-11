@@ -33,6 +33,7 @@ import eiche from './company/eichelogo.png';
 import guruxy from './company/guruxy.png';
 import oklusion from './company/oklusion.jpg';
 import iproperty from './company/iproperty.png';
+import aythen from './company/aythen.svg';
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
@@ -79,4 +80,5 @@ export {
   hearingdate,
   wequo,
   ipropertyProy,
+  aythen,
 };
