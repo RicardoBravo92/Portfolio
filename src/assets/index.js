@@ -34,6 +34,7 @@ import guruxy from './company/guruxy.png';
 import oklusion from './company/oklusion.jpg';
 import iproperty from './company/iproperty.png';
 import aythen from './company/aythen.svg';
+import crestalink from './company/crestalink.jpg';
 
 import yateveo from './yateveo.png';
 import pet from './pet.png';
@@ -81,4 +82,5 @@ export {
   wequo,
   ipropertyProy,
   aythen,
+  crestalink,
 };

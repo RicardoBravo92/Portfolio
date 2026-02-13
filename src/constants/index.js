@@ -33,6 +33,7 @@ import {
   wequo,
   ipropertyProy,
   aythen,
+  crestalink,
 } from '../assets';
 
 export const navLinks = [
@@ -208,7 +209,7 @@ const experiences = [
     company_name: 'Iproperty',
     icon: iproperty,
     iconBg: '#383E56',
-    date: ' June 2025 - oct 2025',
+    date: ' June 2025 - Oct 2025',
     points: [
       'Maintenance and creation of functionalities in nextjs and nestjs.',
     ],
@@ -218,37 +219,18 @@ const experiences = [
     company_name: 'Aythen',
     icon: aythen,
     iconBg: '#383E56',
-    date: ' Nov 2025 - present',
+    date: ' Nov 2025 - Dec 2025',
     points: [
       'Create features using React.js and Node.js for web applications.',
     ],
   },
-];
-
-const testimonials = [
   {
-    testimonial:
-      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-    name: 'Sara Lee',
-    designation: 'CFO',
-    company: 'Acme Co',
-    image: 'https://randomuser.me/api/portraits/women/4.jpg',
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: 'Chris Brown',
-    designation: 'COO',
-    company: 'DEF Corp',
-    image: 'https://randomuser.me/api/portraits/men/5.jpg',
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: 'Lisa Wang',
-    designation: 'CTO',
-    company: '456 Enterprises',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+    title: 'Full Stack Developer',
+    company_name: 'Crestalink',
+    icon: crestalink,
+    iconBg: '#383E56',
+    date: ' Dec 2026 - present',
+    points: ['Create features using Next.js and Node.js for web applications.'],
   },
 ];
 
@@ -367,4 +349,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
