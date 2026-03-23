@@ -12,19 +12,19 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: '#fff',
-        color: '#18181b',
-        border: '1px solid #e5e7eb',
+        background: 'var(--secondary)',
+        color: 'var(--text)',
+        border: '1px solid var(--muted)',
         borderRadius: '1rem',
         boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)',
         padding: '2rem 1.5rem',
       }}
-      contentArrowStyle={{ borderRight: '7px solid #e5e7eb' }}
+      contentArrowStyle={{ borderRight: '7px solid var(--muted)' }}
       date={experience.date}
       dateClassName="text-muted"
       iconStyle={{
-        background: '#fff',
-        border: '2px solid #e5e7eb',
+        background: 'var(--primary)',
+        border: '2px solid var(--muted)',
         boxShadow: 'none',
         display: 'flex',
         alignItems: 'center',

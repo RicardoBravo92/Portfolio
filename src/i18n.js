@@ -9,7 +9,11 @@ const resources = {
         description: 'Telecommunications Engineer and Fullstack. Passionate about technology and modern solutions.'
       },
       navbar: {
-        github: 'Github'
+        about: 'About',
+        work: 'Work',
+        contact: 'Contact',
+        github: 'Github',
+        linkedin: 'LinkedIn'
       },
       about: {
         title: 'About me',
@@ -54,7 +58,11 @@ const resources = {
         description: 'Ingeniero en Telecomunicaciones y Fullstack. Apasionado por la tecnología y el desarrollo de soluciones modernas.'
       },
       navbar: {
-        github: 'Github'
+        about: 'Sobre mí',
+        work: 'Experiencia',
+        contact: 'Contacto',
+        github: 'Github',
+        linkedin: 'LinkedIn'
       },
       about: {
         title: 'Sobre mí',

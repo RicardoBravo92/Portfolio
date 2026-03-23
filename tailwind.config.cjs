@@ -2,14 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#ffffff",
-        secondary: "#f4f4f5",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
         accent: "#2563eb",
-        text: "#18181b",
-        muted: "#71717a",
+        text: "var(--text)",
+        muted: "var(--muted)",
         tertiary: "#151030",
         "black-100": "#100d25",
         "black-200": "#090325",

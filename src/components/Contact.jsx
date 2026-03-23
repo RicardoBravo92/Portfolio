@@ -59,7 +59,7 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={handleSubmit}
-        className="bg-white border border-secondary/40 rounded-xl p-8 flex flex-col gap-6 shadow-card"
+        className="bg-secondary border border-secondary/40 rounded-xl p-8 flex flex-col gap-6 shadow-card"
       >
         <label className="flex flex-col text-left">
           <span className="text-text font-medium mb-2">{t('contact.name')}</span>
@@ -69,7 +69,7 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
             placeholder={t('contact.namePlaceholder')}
-            className="bg-secondary/10 border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
+            className="bg-primary border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
             required
           />
         </label>
@@ -81,7 +81,7 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
             placeholder={t('contact.emailPlaceholder')}
-            className="bg-secondary/10 border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
+            className="bg-primary border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
             required
           />
         </label>
@@ -93,7 +93,7 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             placeholder={t('contact.messagePlaceholder')}
-            className="bg-secondary/10 border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
+            className="bg-primary border border-secondary/40 rounded-lg px-4 py-3 text-text placeholder:text-muted focus:border-accent outline-none transition"
             required
           />
         </label>

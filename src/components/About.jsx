@@ -4,7 +4,7 @@ import { SectionWrapper } from '../hoc';
 import { useTranslation } from 'react-i18next';
 
 const ServiceCard = ({ title, icon }) => (
-  <div className="w-full max-w-xs bg-white border border-secondary/40 rounded-xl p-8 flex flex-col items-center text-center transition hover:border-accent">
+  <div className="w-full max-w-xs bg-secondary border border-secondary/40 rounded-xl p-8 flex flex-col items-center text-center transition hover:border-accent">
     <img src={icon} alt={title} className="w-16 h-16 object-contain mb-4" />
     <h3 className="text-lg font-semibold text-text mb-2">{title}</h3>
   </div>

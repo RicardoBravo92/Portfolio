@@ -3,17 +3,7 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  nexjt,
-  html,
-  css,
-  reactjs,
-  redux,
   tailwind,
-  nodejs,
-  mongodb,
-  git,
   atel,
   miamid,
   akui,
@@ -24,10 +14,6 @@ import {
   oklusion,
   iproperty,
   pet,
-  postgresql,
-  nest,
-  python,
-  docker,
   expo,
   hearingdate,
   wequo,
@@ -73,64 +59,71 @@ const services = [
 const technologies = [
   {
     name: 'HTML 5',
-    icon: html,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg',
   },
   {
     name: 'CSS 3',
-    icon: css,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg',
   },
   {
     name: 'JavaScript',
-    icon: javascript,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
   },
   {
     name: 'TypeScript',
-    icon: typescript,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
   },
   {
     name: 'React JS',
-    icon: reactjs,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg',
   },
   {
     name: 'Next.js',
-    icon: nexjt,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg',
   },
-  /*   {
-    name: 'Redux Toolkit',
-    icon: redux,
-  }, */
   {
     name: 'Tailwind CSS',
     icon: tailwind,
   },
   {
     name: 'Node JS',
-    icon: nodejs,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg',
+  },
+  {
+    name: 'Express',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
   },
   {
     name: 'Nest.js',
-    icon: nest,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original-wordmark.svg',
   },
   {
     name: 'MongoDB',
-    icon: mongodb,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg',
+  },
+  {
+    name: 'MySQL',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg',
   },
   {
     name: 'PostgreSQL',
-    icon: postgresql,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg',
   },
   {
     name: 'git',
-    icon: git,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg',
   },
-
   {
     name: 'Python',
-    icon: python,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg',
+  },
+  {
+    name: 'FastAPI',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain-wordmark.svg',
   },
   {
     name: 'Docker',
-    icon: docker,
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg',
   },
   {
     name: 'Expo',

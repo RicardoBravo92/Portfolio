@@ -4,8 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #ffffff;
+  --secondary: #f4f4f5;
+  --text: #18181b;
+  --muted: #71717a;
+}
+
+.dark {
+  --primary: #09090b;
+  --secondary: #18181b;
+  --text: #f4f4f5;
+  --muted: #a1a1aa;
+}
+
 body {
-  @apply bg-primary text-text font-sans antialiased;
+  @apply bg-primary text-text font-sans antialiased transition-colors duration-300;
 }
 
 * {
@@ -14,7 +28,6 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 .hash-span {

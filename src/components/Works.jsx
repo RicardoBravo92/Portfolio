@@ -15,7 +15,7 @@ const ProjectCard = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <div className='bg-white border border-secondary/40 rounded-xl p-4 flex flex-col shadow-card transition hover:border-accent w-full max-w-sm mx-auto relative'>
+    <div className='bg-secondary border border-secondary/40 rounded-xl p-4 flex flex-col shadow-card transition hover:border-accent w-full max-w-sm mx-auto relative'>
       <div className='relative w-full h-48 mb-4 rounded-lg overflow-hidden'>
         <img
           src={image}
@@ -26,7 +26,7 @@ const ProjectCard = ({
           {source_code_link && (
             <button
               onClick={() => window.open(source_code_link, '_blank')}
-              className='bg-white border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
+              className='bg-primary border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
               aria-label={t('works.viewSource')}
             >
               <img src={github} alt='source code' className='w-5 h-5' />
@@ -35,7 +35,7 @@ const ProjectCard = ({
           {weblink && (
             <button
               onClick={() => window.open(weblink, '_blank')}
-              className='bg-white border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
+              className='bg-primary border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
               aria-label='Web link'
             >
               <svg
