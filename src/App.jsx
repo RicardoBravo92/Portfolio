@@ -4,6 +4,7 @@ import {
   About,
   Contact,
   Experience,
+  Education,
   Feedbacks,
   Hero,
   Navbar,
@@ -20,12 +21,11 @@ const App = () => {
           <div className="bg-primary"><Hero /></div>
           <div className="bg-secondary"><About /></div>
           <div className="bg-primary"><Experience /></div>
-          <div className="bg-secondary"><Tech /></div>
-          <div className="bg-primary"><Works /></div>
-          {/* <Feedbacks /> */}
-          <div className="bg-secondary"><Contact /></div>
+          <div className="bg-secondary"><Education /></div>
+          <div className="bg-primary"><Tech /></div>
+          <div className="bg-secondary"><Works /></div>
+          <div className="bg-primary"><Contact /></div>
         </main>
-        {/* Puedes agregar un Footer minimalista aquí si lo deseas */}
       </div>
     </BrowserRouter>
   );

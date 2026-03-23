@@ -20,6 +20,7 @@ import {
   ipropertyProy,
   aythen,
   crestalink,
+  urbelogo,
 } from '../assets';
 
 export const navLinks = [
@@ -30,6 +31,10 @@ export const navLinks = [
   {
     id: 'work',
     title: 'Work',
+  },
+  {
+    id: 'education',
+    title: 'Education',
   },
   {
     id: 'contact',
@@ -374,4 +379,28 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects };
+const education = [
+  {
+    title: 'Msc. telematics',
+    company_name: 'Universidad Rafael Belloso Chacín',
+    icon: urbelogo,
+    iconBg: '#FFFFFF',
+    date: '2014 - 2016',
+    points: [
+      'Training and development of researchers in the field of application services offered by information systems technology, network architectures, telecommunications transmission and switching systems, as well as the development of hardware and software systems in networks; with a high technical and academic level, and a rigorous interdisciplinary training for research.',
+      'Developed skills in conceptual domain (theoretical and methodological) of computing and telecommunications, and abilities to contribute to the description and improvement of telematic systems research projects.',
+    ],
+  },
+  {
+    title: 'Electronic Engineering, telecommunications',
+    company_name: 'Universidad Rafael Belloso Chacín',
+    icon: urbelogo,
+    iconBg: '#FFFFFF',
+    date: '2009 - 2013',
+    points: [
+      'Theoretical and procedural foundations to manage, design, evaluate and coordinate projects in the area of Telecommunications and Electronics. Expertise in mobile telecommunications, satellite, communication networks, telephone and wireless, optical connections and microwaves.',
+    ],
+  },
+];
+
+export { services, technologies, experiences, projects, education };

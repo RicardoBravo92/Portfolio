@@ -12,6 +12,7 @@ const resources = {
         about: 'About',
         work: 'Work',
         contact: 'Contact',
+        education: 'Education',
         github: 'Github',
         linkedin: 'LinkedIn'
       },
@@ -48,6 +49,10 @@ const resources = {
         subtitle: 'Projects',
         description: 'These projects showcase my skills and experience in web and software development.',
         viewSource: 'View source code'
+      },
+      education: {
+        title: 'Education',
+        subtitle: 'Academic background'
       }
     }
   },
@@ -61,6 +66,7 @@ const resources = {
         about: 'Sobre mí',
         work: 'Experiencia',
         contact: 'Contacto',
+        education: 'Educación',
         github: 'Github',
         linkedin: 'LinkedIn'
       },
@@ -97,6 +103,10 @@ const resources = {
         subtitle: 'Proyectos',
         description: 'Estos proyectos muestran mis habilidades y experiencia en desarrollo web y software.',
         viewSource: 'Ver código fuente'
+      },
+      education: {
+        title: 'Educación',
+        subtitle: 'Formación académica'
       }
     }
   }

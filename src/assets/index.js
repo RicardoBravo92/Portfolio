@@ -41,6 +41,7 @@ import pet from './pet.png';
 import hearingdate from './hearingdate.png';
 import wequo from './Wequo.png';
 import ipropertyProy from './ipropertyProy.png';
+import urbelogo from './urbelogo.jpg';
 
 export {
   logo,
@@ -83,4 +84,5 @@ export {
   ipropertyProy,
   aythen,
   crestalink,
+  urbelogo,
 };
