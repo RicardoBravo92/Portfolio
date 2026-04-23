@@ -26,7 +26,7 @@ const ProjectCard = ({
           {source_code_link && (
             <button
               onClick={() => window.open(source_code_link, '_blank')}
-              className='bg-primary border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
+              className='bg-black border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
               aria-label={t('works.viewSource')}
             >
               <img src={github} alt='source code' className='w-5 h-5' />

@@ -21,6 +21,8 @@ import {
   aythen,
   crestalink,
   urbelogo,
+  burdaerata,
+  topladder,
 } from '../assets';
 
 export const navLinks = [
@@ -287,6 +289,56 @@ const projects = [
     badge: 'mine',
   },
   {
+    name: 'Burdaerata',
+    description: 'A game inspired by Cards Against Humanity',
+    tags: [
+      {
+        name: 'next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'clerk',
+        color: 'yellow-text-gradient',
+      },
+      {
+        name: 'python',
+        color: 'yellow-text-gradient',
+      },
+      { name: 'fastapi', color: 'pink-text-gradient' },
+      {
+        name: 'postgreSQL',
+        color: 'green-text-gradient',
+      },
+    ],
+    image: burdaerata,
+    weblink: 'https://burdaerata.vercel.app/',
+    source_code_link: 'https://github.com/RicardoBravo92/Burdaerata',
+    badge: 'mine',
+  },
+  {
+    name: 'Topladder',
+    description:
+      'A modern web application for organizing and managing sports reunions',
+    tags: [
+      {
+        name: 'next.js',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'mongodb',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'clerk',
+        color: 'yellow-text-gradient',
+      },
+    ],
+    image: topladder,
+    weblink: 'https://topladder.vercel.app',
+    source_code_link: 'https://github.com/RicardoBravo92/topladder',
+    badge: 'mine',
+  },
+  {
     name: 'Ya te veo',
     description: 'A movile app to sell products and services.',
     tags: [
@@ -300,27 +352,6 @@ const projects = [
       },
     ],
     image: yateveo,
-    badge: 'contributed',
-  },
-  {
-    name: 'Hearingdate',
-    description: 'A web app to schedule appointments with attorneys',
-    tags: [
-      {
-        name: 'react.js',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'mongodb',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'nodejs',
-        color: 'yellow-text-gradient',
-      },
-    ],
-    image: hearingdate,
-    weblink: 'https://hearingdate.app',
     badge: 'contributed',
   },
   {

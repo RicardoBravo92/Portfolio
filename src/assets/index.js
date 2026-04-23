@@ -41,6 +41,8 @@ import pet from './pet.png';
 import hearingdate from './hearingdate.png';
 import wequo from './Wequo.png';
 import ipropertyProy from './ipropertyProy.png';
+import topladder from './topladder.png';
+import burdaerata from './burdaerata.png';
 import urbelogo from './urbelogo.jpg';
 
 export {
@@ -81,6 +83,8 @@ export {
   expo,
   hearingdate,
   wequo,
+  topladder,
+  burdaerata,
   ipropertyProy,
   aythen,
   crestalink,
