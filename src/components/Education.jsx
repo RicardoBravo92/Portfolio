@@ -1,84 +1,147 @@
-import React from 'react';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { education } from '../constants';
-import { SectionWrapper } from '../hoc';
-import { useTranslation } from 'react-i18next';
+import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SectionWrapper } from "../hoc";
+import { education } from "../constants";
 
-const EducationCard = ({ education }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const EduCard = ({ edu, index }) => {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const isLeft = index % 2 === 0;
+
+    gsap.fromTo(el, { opacity: 0, x: isLeft ? -50 : 50 }, {
+      opacity: 1, x: 0, duration: 0.7, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 88%", once: true },
+    });
+  }, [index]);
+
   return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: 'var(--secondary)',
-        color: 'var(--text)',
-        border: '1px solid var(--muted)',
-        borderRadius: '1rem',
-        boxShadow: '0 2px 8px 0 rgba(0,0,0,0.04)',
-        padding: '2rem 1.5rem',
-      }}
-      contentArrowStyle={{ borderRight: '7px solid var(--muted)' }}
-      date={education.date}
-      dateClassName="text-muted"
-      iconStyle={{
-        background: 'var(--primary)',
-        border: '2px solid var(--muted)',
-        boxShadow: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={education.icon}
-            alt={education.company_name}
-            className="w-10 h-10 object-contain rounded-full"
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className="text-xl font-bold text-text mb-1">{education.title}</h3>
-        <p className="text-accent text-base font-semibold mb-2">
-          {education.company_name}
-        </p>
+    <div ref={cardRef} className="relative mb-10 md:mb-6" style={{ opacity: 0 }}>
+      <div className="hidden md:grid grid-cols-[1fr_40px_1fr] items-start gap-4">
+        {index % 2 === 0 ? (
+          <>
+            <div className="timeline-card">
+              <CardContent edu={edu} />
+            </div>
+            <div className="flex justify-center pt-6">
+              <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
+            </div>
+            <div />
+          </>
+        ) : (
+          <>
+            <div />
+            <div className="flex justify-center pt-6">
+              <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
+            </div>
+            <div className="timeline-card">
+              <CardContent edu={edu} />
+            </div>
+          </>
+        )}
       </div>
-      <ul className="mt-3 list-disc ml-5 space-y-2 text-muted text-sm text-left">
-        {education.points.map((point, index) => (
-          <li key={`education-point-${index}`}>{point}</li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
+
+      <div className="md:hidden flex gap-4 items-start">
+        <div className="flex flex-col items-center pt-6 shrink-0" style={{ width: "20px" }}>
+          <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
+        </div>
+        <div className="timeline-card flex-1">
+          <CardContent edu={edu} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CardContent = ({ edu }) => {
+  const [open, setOpen] = useState(false);
+  const listRef = useRef(null);
+  const arrowRef = useRef(null);
+
+  useEffect(() => {
+    const el = listRef.current;
+    const arrow = arrowRef.current;
+    if (!el) return;
+
+    if (open) {
+      gsap.set(el, { height: "auto" });
+      const fullH = el.offsetHeight;
+      gsap.fromTo(el, { height: 0, opacity: 0 }, { height: fullH, opacity: 1, duration: 0.35, ease: "power2.out" });
+      gsap.to(arrow, { rotate: 180, duration: 0.3, ease: "power2.out" });
+    } else {
+      gsap.to(el, { height: 0, opacity: 0, duration: 0.3, ease: "power2.in" });
+      gsap.to(arrow, { rotate: 0, duration: 0.3, ease: "power2.out" });
+    }
+  }, [open]);
+
+  return (
+    <>
+      <div className="flex items-center gap-3 mb-3">
+        <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0" style={{ background: "var(--accent-bg)" }}>
+          <img src={edu.icon} alt={edu.company_name} className="w-full h-full object-cover" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{edu.title}</h3>
+          <p className="text-xs font-semibold" style={{ color: "var(--accent)" }}>{edu.company_name}</p>
+        </div>
+        <button onClick={() => setOpen(!open)} className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-colors" style={{ background: "var(--accent-bg)" }}>
+          <svg ref={arrowRef} width="14" height="14" fill="none" stroke="var(--accent)" strokeWidth="2" viewBox="0 0 24 24" style={{ display: "block" }}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+      <p className="text-[0.65rem] font-medium mb-3" style={{ color: "var(--text-muted)" }}>{edu.date}</p>
+      <div ref={listRef} style={{ height: 0, opacity: 0, overflow: "hidden" }}>
+        <ul className="space-y-2 pt-1">
+          {edu.points.map((point, i) => (
+            <li key={i} className="flex gap-2 text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+              <svg className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
 const Education = () => {
   const { t } = useTranslation();
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const h = headerRef.current;
+    if (!h) return;
+    const tl = gsap.timeline({ scrollTrigger: { trigger: h, start: "top 80%", once: true } });
+    tl.fromTo(h.querySelector(".ed-label"), { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 })
+      .fromTo(h.querySelector(".ed-title"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .fromTo(h.querySelector(".ed-line"), { scaleX: 0 }, { scaleX: 1, duration: 0.7 }, "-=0.2");
+  }, []);
+
   return (
-    <section className="py-12 px-4 max-w-5xl mx-auto" id="education">
-      <div className="mb-8 text-center">
-        <p className="text-accent uppercase tracking-widest text-sm mb-2">
-          {t('education.title')}
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
-          {t('education.subtitle')}
-        </h2>
+    <div>
+      <div ref={headerRef} className="text-center mb-14">
+        <p className="section-label mb-3 opacity-0 ed-label">{t("education.label")}</p>
+        <h2 className="section-title mb-4 opacity-0 ed-title">{t("education.title")}</h2>
+        <div className="section-divider mt-6 opacity-0 ed-line" />
       </div>
-      <div className="mt-8 flex flex-col">
-        <VerticalTimeline layout="1-column" lineColor="#e5e7eb">
-          {education.map((edu, index) => (
-            <EducationCard
-              key={`education-${index}`}
-              education={edu}
-            />
-          ))}
-        </VerticalTimeline>
+
+      <div className="relative">
+        <div className="timeline-line hidden md:block" />
+        {education.map((edu, i) => (
+          <EduCard key={i} edu={edu} index={i} />
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default SectionWrapper(Education, 'education');
+export default SectionWrapper(Education, "education");

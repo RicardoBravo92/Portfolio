@@ -1,25 +1,50 @@
-import React from "react";
+import { useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
-import { useTranslation } from 'react-i18next';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Tech = () => {
   const { t } = useTranslation();
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const h = headerRef.current;
+    const g = gridRef.current;
+    if (!h) return;
+
+    gsap.fromTo(h.querySelector(".t-label"), { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, scrollTrigger: { trigger: h, start: "top 80%", once: true } });
+    gsap.fromTo(h.querySelector(".t-title"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, scrollTrigger: { trigger: h, start: "top 80%", once: true }, delay: 0.1 });
+
+    if (g) {
+      gsap.fromTo(
+        g.querySelectorAll(".tech-icon"),
+        { opacity: 0, y: 25, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.04, duration: 0.4, ease: "power3.out", scrollTrigger: { trigger: g, start: "top 85%", once: true } }
+      );
+    }
+  }, []);
+
   return (
-    <section className="py-12 px-4 max-w-5xl mx-auto" id="tech">
-      <div className="mb-8 text-center">
-        <p className="text-accent uppercase tracking-widest text-sm mb-2">{t('tech.title')}</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">{t('tech.subtitle')}</h2>
+    <div>
+      <div ref={headerRef} className="text-center mb-12">
+        <p className="section-label mb-3 opacity-0 t-label">{t("tech.label")}</p>
+        <h2 className="section-title opacity-0 t-title">{t("tech.title")}</h2>
       </div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 justify-items-center">
-        {technologies.map((technology) => (
-          <div key={technology.name} className="flex flex-col items-center">
-            <img src={technology.icon} alt={technology.name} className="w-14 h-14 object-contain mb-2" />
-            <span className="text-xs text-muted mt-1">{technology.name}</span>
+
+      <div ref={gridRef} className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 justify-items-center">
+        {technologies.map((tech) => (
+          <div key={tech.name} className="tech-icon">
+            <img src={tech.icon} alt={tech.name} />
+            <span>{tech.name}</span>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 

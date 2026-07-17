@@ -1,126 +1,166 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 const resources = {
   en: {
     translation: {
       hero: {
-        hello: 'Hi, I am <1>Ricardo Bravo</1>',
-        description: 'Telecommunications Engineer and Fullstack. Passionate about technology and modern solutions.'
+        greeting: "Hi, I'm",
+        name: "Ricardo Bravo",
+        description:
+          "Telecommunications Engineer & Fullstack Developer. I build scalable web applications with modern technologies.",
+        available: "Available for work",
+        scroll: "Scroll",
       },
-      navbar: {
-        about: 'About',
-        work: 'Work',
-        contact: 'Contact',
-        education: 'Education',
-        github: 'Github',
-        linkedin: 'LinkedIn'
+      nav: {
+        about: "About",
+        tech: "Stack",
+        experience: "Experience",
+        education: "Education",
+        works: "Projects",
+        contact: "Contact",
+        github: "GitHub",
+        linkedin: "LinkedIn",
       },
       about: {
-        title: 'About me',
-        summary: 'Summary',
-        description: 'As a fullstack engineer, I develop applications both frontend and backend, using modern technologies like JavaScript, Python, React, and Node.js. I am passionate about creating efficient and elegant solutions.'
-      },
-      contact: {
-        contact: 'Contact',
-        talk: 'Let\'s talk',
-        message: 'Do you have an idea, project or just want to say hi? Send me a message!',
-        name: 'Name',
-        email: 'Email',
-        messageLabel: 'Message',
-        namePlaceholder: 'Your name',
-        emailPlaceholder: 'your@email.com',
-        messagePlaceholder: 'How can I help you?',
-        send: 'Send',
-        sending: 'Sending...',
-        success: 'Thank you. I will reply as soon as possible.',
-        error: 'An error occurred. Please try again.'
-      },
-      experience: {
-        title: 'Experience',
-        subtitle: 'Professional career'
+        label: "About",
+        title: "A bit about me",
+        description:
+          "I'm a fullstack engineer with 10+ years of experience building web and mobile applications. I specialize in React, Node.js, and cloud-native architectures. I'm passionate about creating clean, efficient, and user-focused solutions.",
+        services: [
+          { title: "Frontend", desc: "React, Next.js, TypeScript, Tailwind CSS" },
+          { title: "Backend", desc: "Node.js, NestJS, Express, FastAPI" },
+          { title: "Database", desc: "PostgreSQL, MongoDB, Supabase" },
+          { title: "DevOps", desc: "Docker, CI/CD, AWS, Vercel" },
+        ],
       },
       tech: {
-        title: 'Technologies',
-        subtitle: 'Stack & Tools'
+        label: "Skills",
+        title: "Technologies I work with",
       },
-      works: {
-        title: 'Portfolio',
-        subtitle: 'Projects',
-        description: 'These projects showcase my skills and experience in web and software development.',
-        viewSource: 'View source code'
+      experience: {
+        label: "Career",
+        title: "Work Experience",
       },
       education: {
-        title: 'Education',
-        subtitle: 'Academic background'
-      }
-    }
+        label: "Studies",
+        title: "Education",
+      },
+      works: {
+        label: "Portfolio",
+        title: "Selected Projects",
+        description: "A collection of projects I've built or contributed to.",
+        all: "All",
+        mine: "Mine",
+        contributed: "Contributed",
+        viewCode: "View code",
+        viewLive: "View live",
+      },
+      contact: {
+        label: "Contact",
+        title: "Let's work together",
+        description: "Have a project in mind? Let's talk about it.",
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        namePlaceholder: "Your name",
+        emailPlaceholder: "your@email.com",
+        messagePlaceholder: "Tell me about your project...",
+        send: "Send Message",
+        sending: "Sending...",
+        success: "Message sent! I'll get back to you soon.",
+        error: "Something went wrong. Please try again.",
+        emailLabel: "Email",
+        locationLabel: "Location",
+        location: "Venezuela",
+        linkedinLabel: "LinkedIn",
+        githubLabel: "GitHub",
+      },
+    },
   },
   es: {
     translation: {
       hero: {
-        hello: 'Hola, soy <1>Ricardo Bravo</1>',
-        description: 'Ingeniero en Telecomunicaciones y Fullstack. Apasionado por la tecnología y el desarrollo de soluciones modernas.'
+        greeting: "Hola, soy",
+        name: "Ricardo Bravo",
+        description:
+          "Ingeniero en Telecomunicaciones y Desarrollador Fullstack. Construyo aplicaciones web escalables con tecnologías modernas.",
+        available: "Disponible para trabajar",
+        scroll: "Scroll",
       },
-      navbar: {
-        about: 'Sobre mí',
-        work: 'Experiencia',
-        contact: 'Contacto',
-        education: 'Educación',
-        github: 'Github',
-        linkedin: 'LinkedIn'
+      nav: {
+        about: "Sobre mí",
+        tech: "Stack",
+        experience: "Experiencia",
+        education: "Educación",
+        works: "Proyectos",
+        contact: "Contacto",
+        github: "GitHub",
+        linkedin: "LinkedIn",
       },
       about: {
-        title: 'Sobre mí',
-        summary: 'Resumen',
-        description: 'Como ingeniero fullstack, desarrollo aplicaciones tanto en el frontend como en el backend, usando tecnologías modernas como JavaScript, Python, React y Node.js. Me apasiona crear soluciones eficientes y elegantes.'
-      },
-      contact: {
-        contact: 'Contacto',
-        talk: 'Hablemos',
-        message: '¿Tienes una idea, proyecto o simplemente quieres saludar? ¡Envíame un mensaje!',
-        name: 'Nombre',
-        email: 'Email',
-        messageLabel: 'Mensaje',
-        namePlaceholder: 'Tu nombre',
-        emailPlaceholder: 'tu@email.com',
-        messagePlaceholder: '¿En qué puedo ayudarte?',
-        send: 'Enviar',
-        sending: 'Enviando...',
-        success: 'Gracias. Te responderé lo antes posible.',
-        error: 'Ocurrió un error. Intenta de nuevo.'
-      },
-      experience: {
-        title: 'Experiencia',
-        subtitle: 'Trayectoria profesional'
+        label: "Sobre mí",
+        title: "Un poco sobre mí",
+        description:
+          "Soy un ingeniero fullstack con más de 10 años de experiencia construyendo aplicaciones web y móviles. Me especializo en React, Node.js y arquitecturas cloud-native. Me apasiona crear soluciones limpias, eficientes y centradas en el usuario.",
+        services: [
+          { title: "Frontend", desc: "React, Next.js, TypeScript, Tailwind CSS" },
+          { title: "Backend", desc: "Node.js, NestJS, Express, FastAPI" },
+          { title: "Base de datos", desc: "PostgreSQL, MongoDB, Supabase" },
+          { title: "DevOps", desc: "Docker, CI/CD, AWS, Vercel" },
+        ],
       },
       tech: {
-        title: 'Tecnologías',
-        subtitle: 'Stack & Herramientas'
+        label: "Habilidades",
+        title: "Tecnologías que uso",
       },
-      works: {
-        title: 'Portafolio',
-        subtitle: 'Proyectos',
-        description: 'Estos proyectos muestran mis habilidades y experiencia en desarrollo web y software.',
-        viewSource: 'Ver código fuente'
+      experience: {
+        label: "Trayectoria",
+        title: "Experiencia laboral",
       },
       education: {
-        title: 'Educación',
-        subtitle: 'Formación académica'
-      }
-    }
-  }
+        label: "Formación",
+        title: "Educación",
+      },
+      works: {
+        label: "Portafolio",
+        title: "Proyectos destacados",
+        description: "Una selección de proyectos que he creado o en los que he participado.",
+        all: "Todos",
+        mine: "Míos",
+        contributed: "Contribuidos",
+        viewCode: "Ver código",
+        viewLive: "Ver en vivo",
+      },
+      contact: {
+        label: "Contacto",
+        title: "Trabajemos juntos",
+        description: "¿Tienes un proyecto en mente? Hablemos.",
+        name: "Nombre",
+        email: "Email",
+        message: "Mensaje",
+        namePlaceholder: "Tu nombre",
+        emailPlaceholder: "tu@email.com",
+        messagePlaceholder: "Cuéntame sobre tu proyecto...",
+        send: "Enviar mensaje",
+        sending: "Enviando...",
+        success: "¡Mensaje enviado! Te responderé pronto.",
+        error: "Algo salió mal. Inténtalo de nuevo.",
+        emailLabel: "Email",
+        locationLabel: "Ubicación",
+        location: "Venezuela",
+        linkedinLabel: "LinkedIn",
+        githubLabel: "GitHub",
+      },
+    },
+  },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en',
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en",
+  fallbackLng: "en",
+  interpolation: { escapeValue: false },
+});
 
-export default i18n; 
+export default i18n;

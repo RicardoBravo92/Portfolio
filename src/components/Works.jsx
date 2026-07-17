@@ -1,108 +1,137 @@
-import React from 'react';
-import { github } from '../assets';
-import { SectionWrapper } from '../hoc';
-import { projects } from '../constants';
-import { useTranslation } from 'react-i18next';
+import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SectionWrapper } from "../hoc";
+import { projects } from "../constants";
+import { github } from "../assets";
 
-const ProjectCard = ({
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-  badge,
-  weblink,
-}) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const filters = [
+  { id: "all", en: "All", es: "Todos" },
+  { id: "mine", en: "Mine", es: "Míos" },
+  { id: "contributed", en: "Contributed", es: "Contribuidos" },
+];
+
+const ProjectCard = ({ project }) => {
   const { t } = useTranslation();
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const handleEnter = () => {
+      gsap.to(el, { y: -6, duration: 0.3, ease: "power2.out" });
+      gsap.to(el.querySelector(".p-img"), { scale: 1.08, duration: 0.5, ease: "power2.out" });
+      gsap.to(el.querySelector(".p-overlay"), { opacity: 1, duration: 0.3 });
+    };
+    const handleLeave = () => {
+      gsap.to(el, { y: 0, duration: 0.3, ease: "power2.out" });
+      gsap.to(el.querySelector(".p-img"), { scale: 1, duration: 0.5, ease: "power2.out" });
+      gsap.to(el.querySelector(".p-overlay"), { opacity: 0, duration: 0.3 });
+    };
+    el.addEventListener("mouseenter", handleEnter);
+    el.addEventListener("mouseleave", handleLeave);
+    return () => { el.removeEventListener("mouseenter", handleEnter); el.removeEventListener("mouseleave", handleLeave); };
+  }, []);
+
+  const p = project;
+
   return (
-    <div className='bg-secondary border border-secondary/40 rounded-xl p-4 flex flex-col shadow-card transition hover:border-accent w-full max-w-sm mx-auto relative'>
-      <div className='relative w-full h-48 mb-4 rounded-lg overflow-hidden'>
-        <img
-          src={image}
-          alt={name}
-          className='w-full h-full object-cover rounded-lg'
-        />
-        <div className='absolute top-2 right-2 flex gap-2'>
-          {source_code_link && (
-            <button
-              onClick={() => window.open(source_code_link, '_blank')}
-              className='bg-black border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
-              aria-label={t('works.viewSource')}
-            >
-              <img src={github} alt='source code' className='w-5 h-5' />
-            </button>
+    <div ref={cardRef} className="card overflow-hidden flex flex-col relative">
+      {p.badge && (
+        <span className={`absolute top-3 left-3 z-10 px-2.5 py-0.5 rounded-full text-[0.6rem] font-bold uppercase tracking-wider ${
+          p.badge === "mine" ? "text-white" : ""
+        }`} style={p.badge === "mine" ? { background: "var(--accent)" } : { background: "var(--surface)", color: "var(--accent)", border: "1px solid var(--accent)" }}>
+          {p.badge === "mine" ? "Own" : "Team"}
+        </span>
+      )}
+
+      <div className="relative w-full h-48 overflow-hidden">
+        <img src={p.image} alt={p.name} className="p-img w-full h-full object-cover" />
+        <div className="p-overlay absolute inset-0 opacity-0 flex items-end justify-center pb-4 gap-3 project-overlay">
+          {p.source_code_link && (
+            <a href={p.source_code_link} target="_blank" rel="noopener noreferrer" className="project-btn" aria-label={t("works.viewCode")}>
+              <img src={github} alt="GitHub" className="w-4 h-4 brightness-0 invert" />
+            </a>
           )}
-          {weblink && (
-            <button
-              onClick={() => window.open(weblink, '_blank')}
-              className='bg-primary border border-secondary/40 rounded-full p-2 shadow hover:bg-accent hover:text-white transition'
-              aria-label='Web link'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth={2}
-                stroke='currentColor'
-                className='w-5 h-5'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M13.828 10.172a4 4 0 015.656 5.656l-3.536 3.536a4 4 0 01-5.656-5.656m1.414-1.414a4 4 0 00-5.656 5.656l3.536 3.536a4 4 0 005.656-5.656'
-                />
-              </svg>
-            </button>
+          {p.weblink && (
+            <a href={p.weblink} target="_blank" rel="noopener noreferrer" className="project-btn" aria-label={t("works.viewLive")}>
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
           )}
         </div>
       </div>
-      <h3 className='text-lg font-bold text-text mb-1 '>{name}</h3>
-      <p className='text-muted text-sm mb-3'>{description}</p>
-      <div className='grid grid-cols-3 mt-auto max-w-[250px] gap-2'>
-        {tags.map((tag) => (
-          <span key={tag.name} className={`text-xs ${tag.color}`}>
-            #{tag.name}
-          </span>
-        ))}
+
+      <div className="p-5 flex flex-col flex-1">
+        <h3 className="text-base font-bold mb-1.5" style={{ color: "var(--text-primary)" }}>{p.name}</h3>
+        <p className="text-xs leading-relaxed mb-4 line-clamp-2 flex-1" style={{ color: "var(--text-muted)" }}>{p.description}</p>
+        <div className="flex flex-wrap gap-1.5">
+          {p.tags.map((tag) => (
+            <span key={tag.name} className={`tag ${tag.color}`}>#{tag.name}</span>
+          ))}
+        </div>
       </div>
-      {/* Badge de propiedad o contribución en la esquina inferior derecha */}
-      {badge && (
-        <span
-          className={`absolute bottom-2 right-2 px-2 py-1 rounded text-xs font-semibold shadow z-10 ${
-            badge === 'mine'
-              ? 'bg-accent text-white'
-              : 'bg-secondary text-accent border border-accent'
-          }`}
-        >
-          {badge}
-        </span>
-      )}
     </div>
   );
 };
 
 const Works = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+  const [filter, setFilter] = useState("all");
+  const isEs = i18n.language === "es";
+
+  const filtered = projects.filter((p) => filter === "all" || p.badge === filter);
+
+  useEffect(() => {
+    const h = headerRef.current;
+    const g = gridRef.current;
+    if (!h) return;
+
+    const tl = gsap.timeline({ scrollTrigger: { trigger: h, start: "top 80%", once: true } });
+    tl.fromTo(h.querySelector(".w-label"), { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 })
+      .fromTo(h.querySelector(".w-title"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .fromTo(h.querySelector(".w-desc"), { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+      .fromTo(h.querySelector(".w-line"), { scaleX: 0 }, { scaleX: 1, duration: 0.7 }, "-=0.2");
+
+    if (g) {
+      gsap.fromTo(g.querySelectorAll(".card"), { opacity: 0, y: 40, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.6, ease: "power3.out", scrollTrigger: { trigger: g, start: "top 85%", once: true } });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (gridRef.current) {
+      gsap.fromTo(gridRef.current.querySelectorAll(".card"), { opacity: 0, y: 20, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, stagger: 0.06, duration: 0.4, ease: "power3.out" });
+    }
+  }, [filter]);
+
   return (
-    <section className='py-12 px-4 max-w-6xl mx-auto' id='projects'>
-      <div className='mb-8 text-center'>
-        <p className='text-accent uppercase tracking-widest text-sm mb-2'>
-          {t('works.subtitle')}
-        </p>
-        <h2 className='text-3xl md:text-4xl font-bold text-text mb-4'>
-          {t('works.title')}
-        </h2>
-        <p className='text-muted text-lg max-w-2xl mx-auto'>
-          {t('works.description')}
-        </p>
+    <div>
+      <div ref={headerRef} className="text-center mb-12">
+        <p className="section-label mb-3 opacity-0 w-label">{t("works.label")}</p>
+        <h2 className="section-title mb-3 opacity-0 w-title">{t("works.title")}</h2>
+        <p className="text-sm max-w-xl mx-auto mb-6 opacity-0 w-desc" style={{ color: "var(--text-muted)" }}>{t("works.description")}</p>
+        <div className="section-divider mb-8 opacity-0 w-line" />
+
+        <div className="flex justify-center gap-2">
+          {filters.map((f) => (
+            <button key={f.id} onClick={() => setFilter(f.id)} className="px-4 py-2 rounded-lg text-xs font-semibold transition-all" style={filter === f.id ? { background: "var(--accent)", color: "#fff", boxShadow: "0 4px 16px rgba(99,102,241,0.3)" } : { background: "var(--surface)", color: "var(--text-muted)", border: "1px solid var(--border)" }}>
+              {f[isEs ? "es" : "en"]}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className='mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
-        {projects.map((project) => (
-          <ProjectCard key={project.name} {...project} />
+
+      <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filtered.map((p) => (
+          <ProjectCard key={p.name} project={p} />
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default SectionWrapper(Works, 'works');
+export default SectionWrapper(Works, "works");

@@ -1,25 +1,46 @@
-import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { styles } from "../styles";
-import { staggerContainer } from "../utils/motion";
+gsap.registerPlugin(ScrollTrigger);
 
-const StarWrapper = (Component, idName) =>
+const SectionWrapper = (Component, id) =>
   function HOC() {
-    return (
-      <motion.section
-        variants={staggerContainer()}
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.25 }}
-        className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
-      >
-        <span className='hash-span' id={idName}>
-          &nbsp;
-        </span>
+    const ref = useRef(null);
 
+    useEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        }
+      );
+
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => {
+          if (t.trigger === el) t.kill();
+        });
+      };
+    }, []);
+
+    return (
+      <section
+        ref={ref}
+        style={{ opacity: 0 }}
+        className="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28"
+      >
+        {id && <span id={id} className="block -mt-28 mb-0" />}
         <Component />
-      </motion.section>
+      </section>
     );
   };
 
-export default StarWrapper;
+export default SectionWrapper;
