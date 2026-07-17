@@ -7,14 +7,13 @@ import { education } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const EduCard = ({ edu, index }) => {
+const EduCard = ({ edu, data, index }) => {
   const cardRef = useRef(null);
 
   useEffect(() => {
     const el = cardRef.current;
     if (!el) return;
     const isLeft = index % 2 === 0;
-
     gsap.fromTo(el, { opacity: 0, x: isLeft ? -50 : 50 }, {
       opacity: 1, x: 0, duration: 0.7, ease: "power3.out",
       scrollTrigger: { trigger: el, start: "top 88%", once: true },
@@ -27,7 +26,7 @@ const EduCard = ({ edu, index }) => {
         {index % 2 === 0 ? (
           <>
             <div className="timeline-card">
-              <CardContent edu={edu} />
+              <CardContent edu={edu} data={data} />
             </div>
             <div className="flex justify-center pt-6">
               <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
@@ -41,25 +40,24 @@ const EduCard = ({ edu, index }) => {
               <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
             </div>
             <div className="timeline-card">
-              <CardContent edu={edu} />
+              <CardContent edu={edu} data={data} />
             </div>
           </>
         )}
       </div>
-
       <div className="md:hidden flex gap-4 items-start">
         <div className="flex flex-col items-center pt-6 shrink-0" style={{ width: "20px" }}>
           <div className="timeline-dot" style={{ position: "relative", left: "auto", transform: "none" }} />
         </div>
         <div className="timeline-card flex-1">
-          <CardContent edu={edu} />
+          <CardContent edu={edu} data={data} />
         </div>
       </div>
     </div>
   );
 };
 
-const CardContent = ({ edu }) => {
+const CardContent = ({ edu, data }) => {
   const [open, setOpen] = useState(false);
   const listRef = useRef(null);
   const arrowRef = useRef(null);
@@ -68,7 +66,6 @@ const CardContent = ({ edu }) => {
     const el = listRef.current;
     const arrow = arrowRef.current;
     if (!el) return;
-
     if (open) {
       gsap.set(el, { height: "auto" });
       const fullH = el.offsetHeight;
@@ -84,26 +81,21 @@ const CardContent = ({ edu }) => {
     <>
       <div className="flex items-center gap-3 mb-3">
         <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0" style={{ background: "var(--accent-bg)" }}>
-          <img src={edu.icon} alt={edu.company_name} className="w-full h-full object-cover" />
+          <img src={data.icon} alt={edu.company_name} className="w-full h-full object-cover" />
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="text-sm font-bold" style={{ color: "var(--text-primary)" }}>{edu.title}</h3>
           <p className="text-xs font-semibold" style={{ color: "var(--accent)" }}>{edu.company_name}</p>
         </div>
         <button onClick={() => setOpen(!open)} className="shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-colors" style={{ background: "var(--accent-bg)" }}>
-          <svg ref={arrowRef} width="14" height="14" fill="none" stroke="var(--accent)" strokeWidth="2" viewBox="0 0 24 24" style={{ display: "block" }}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+          <svg ref={arrowRef} width="14" height="14" fill="none" stroke="var(--accent)" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
         </button>
       </div>
-      <p className="text-[0.65rem] font-medium mb-3" style={{ color: "var(--text-muted)" }}>{edu.date}</p>
       <div ref={listRef} style={{ height: 0, opacity: 0, overflow: "hidden" }}>
         <ul className="space-y-2 pt-1">
           {edu.points.map((point, i) => (
             <li key={i} className="flex gap-2 text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-              <svg className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
+              <svg className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "var(--accent)" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               <span>{point}</span>
             </li>
           ))}
@@ -116,6 +108,7 @@ const CardContent = ({ edu }) => {
 const Education = () => {
   const { t } = useTranslation();
   const headerRef = useRef(null);
+  const items = t("education.items", { returnObjects: true });
 
   useEffect(() => {
     const h = headerRef.current;
@@ -133,11 +126,10 @@ const Education = () => {
         <h2 className="section-title mb-4 opacity-0 ed-title">{t("education.title")}</h2>
         <div className="section-divider mt-6 opacity-0 ed-line" />
       </div>
-
       <div className="relative">
         <div className="timeline-line hidden md:block" />
-        {education.map((edu, i) => (
-          <EduCard key={i} edu={edu} index={i} />
+        {items.map((edu, i) => (
+          <EduCard key={i} edu={edu} data={education[i]} index={i} />
         ))}
       </div>
     </div>

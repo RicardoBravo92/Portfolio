@@ -31,12 +31,12 @@ export const navLinks = [
     title: 'About',
   },
   {
-    id: 'work',
-    title: 'Work',
+    id: 'experience',
+    title: 'Experience',
   },
   {
-    id: 'education',
-    title: 'Education',
+    id: 'works',
+    title: 'Projects',
   },
   {
     id: 'contact',
@@ -89,17 +89,15 @@ const technologies = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg',
   },
   {
-    name: 'Tailwind CSS',
-    icon: tailwind,
+    name: 'Angular',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
   },
+ 
   {
     name: 'Node JS',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg',
   },
-  {
-    name: 'Express',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-  },
+
   {
     name: 'Nest.js',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original-wordmark.svg',
@@ -119,6 +117,10 @@ const technologies = [
   {
     name: 'git',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: tailwind,
   },
   {
     name: 'Python',
