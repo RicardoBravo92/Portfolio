@@ -81,7 +81,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="hero-section w-full min-h-screen flex flex-col justify-center items-center text-center px-5">
+    <section ref={containerRef} className="hero-section w-full min-h-screen flex flex-col justify-center items-center text-center px-5 pt-16">
       {/* Grid */}
       <div className="absolute inset-0 pointer-events-none hero-grid opacity-50" />
 
