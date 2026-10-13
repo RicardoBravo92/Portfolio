@@ -67,11 +67,11 @@ const services = [
 const technologies = [
   {
     name: 'HTML 5',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg',
+    icon: 'html.svg',
   },
   {
     name: 'CSS 3',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg',
+    icon: 'css.svg',
   },
   {
     name: 'JavaScript',
@@ -79,15 +79,15 @@ const technologies = [
   },
   {
     name: 'TypeScript',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/ts.svg',
   },
   {
     name: 'React JS',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg',
+    icon: 'react.svg',
   },
   {
     name: 'Next.js',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg',
+    icon: 'nextjs.svg',
   },
   {
     name: 'Angular',
