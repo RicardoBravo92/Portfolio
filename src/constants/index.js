@@ -1,4 +1,30 @@
-import { astro, django, expo } from '../assets';
+import {
+  astro,
+  django,
+  expo,
+  web,
+  mobile,
+  backend,
+  creator,
+  tailwind,
+  crestalink,
+  aythen,
+  iproperty,
+  oklusion,
+  guruxy,
+  eiche,
+  yabok,
+  miamid,
+  akui,
+  atel,
+  pet,
+  burdaerata,
+  topladder,
+  yateveo,
+  wequo,
+  ipropertyProy,
+  urbelogo,
+} from '../assets';
 
 export const navLinks = [
   {
