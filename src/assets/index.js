@@ -24,6 +24,8 @@ import nest from './tech/nestjs.svg';
 import postgresql from './tech/postgresql.svg';
 import python from './tech/python.svg';
 import expo from './tech/expo.svg';
+import astro from './tech/astro.svg';
+import django from './tech/django.svg';
 
 import atel from './company/atel.png';
 import miamid from './company/miamid.png';
@@ -81,6 +83,8 @@ export {
   nest,
   python,
   expo,
+  astro,
+  django,
   hearingdate,
   wequo,
   topladder,

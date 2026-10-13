@@ -1,29 +1,4 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  tailwind,
-  atel,
-  miamid,
-  akui,
-  yateveo,
-  yabok,
-  eiche,
-  guruxy,
-  oklusion,
-  iproperty,
-  pet,
-  expo,
-  hearingdate,
-  wequo,
-  ipropertyProy,
-  aythen,
-  crestalink,
-  urbelogo,
-  burdaerata,
-  topladder,
-} from '../assets';
+import { astro, django, expo } from '../assets';
 
 export const navLinks = [
   {
@@ -92,7 +67,7 @@ const technologies = [
     name: 'Angular',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
   },
- 
+
   {
     name: 'Node JS',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg',
@@ -134,9 +109,18 @@ const technologies = [
     name: 'Docker',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg',
   },
+
   {
     name: 'Expo',
     icon: expo,
+  },
+  {
+    name: 'Django',
+    icon: django,
+  },
+  {
+    name: 'Astro',
+    icon: astro,
   },
 ];
 
