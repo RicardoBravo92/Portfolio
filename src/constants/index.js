@@ -67,73 +67,73 @@ const services = [
 const technologies = [
   {
     name: 'HTML 5',
-    icon: 'html',
+    icon: 'https://skillicons.dev/icons?i=html',
   },
   {
     name: 'CSS 3',
-    icon: 'css',
+    icon: 'https://skillicons.dev/icons?i=css',
   },
   {
     name: 'JavaScript',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg',
+    icon: 'https://skillicons.dev/icons?i=javascript',
   },
   {
     name: 'TypeScript',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/ts',
+    icon: 'https://skillicons.dev/icons?i=typescript',
   },
   {
     name: 'React JS',
-    icon: 'react',
+    icon: 'https://skillicons.dev/icons?i=react',
   },
   {
     name: 'Next.js',
-    icon: 'nextjs',
+    icon: 'https://skillicons.dev/icons?i=nextjs',
   },
   {
     name: 'Angular',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
+    icon: 'https://skillicons.dev/icons?i=angular',
   },
 
   {
     name: 'Node JS',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=nodejs',
   },
 
   {
     name: 'Nest.js',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=nestjs',
   },
   {
     name: 'MongoDB',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=mongodb',
   },
   {
     name: 'MySQL',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=mysql',
   },
   {
     name: 'PostgreSQL',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=postgresql',
   },
   {
     name: 'git',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=git',
   },
   {
     name: 'Tailwind CSS',
-    icon: tailwind,
+    icon: 'https://skillicons.dev/icons?i=tailwind',
   },
   {
     name: 'Python',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=python',
   },
   {
     name: 'FastAPI',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-plain-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=fastapi',
   },
   {
     name: 'Docker',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg',
+    icon: 'https://skillicons.dev/icons?i=docker',
   },
 
   {
@@ -142,11 +142,11 @@ const technologies = [
   },
   {
     name: 'Django',
-    icon: django,
+    icon: 'https://skillicons.dev/icons?i=django',
   },
   {
     name: 'Astro',
-    icon: astro,
+    icon: 'https://skillicons.dev/icons?i=astro',
   },
 ];
 
